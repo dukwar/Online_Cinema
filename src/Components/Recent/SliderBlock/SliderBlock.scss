@@ -1,0 +1,32 @@
+@import "../../../helpersSCSS/vars";
+.slider {
+  background-image: url("https://images.wallpaperscraft.ru/image/pyatna_ten_temnyy_cvet_38223_2560x1080.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  height: 900px;
+
+
+}
+
+.slider__inner {
+
+
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+
+
+
+  //margin-top: 70px;
+  //width: 100%;
+  //background: url('https://images.kinomax.ru/conv/poster/5471/p_ac75e67.jpg') no-repeat;
+  //background-size: cover;
+  //background: linear-gradient(-45deg, $sliderGradient-1, $sliderGradient-2);
+  //position: relative;
+
+}
+

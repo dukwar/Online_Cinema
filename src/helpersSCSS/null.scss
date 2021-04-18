@@ -1,0 +1,16 @@
+@import "../helpersSCSS/vars";
+
+*{padding: 0; margin: 0; border: 0;}
+*, *:before, *:after {box-sizing: border-box;}
+a:focus, a:active{outline: none;}
+html, body{height: 100%; width: 100%; font-size: 100%; margin: 0 auto;}
+body{background: linear-gradient(90deg, rgba(0,21,36,1) 0%, rgba(58,18,80,1) 35%, rgba(109,49,142,1) 100%);}
+//body{ overflow-x: hidden }
+input, button, textarea{font-family: inherit}
+input::-ms-clear{display: none}
+button{cursor: pointer}
+button::-moz-focus-inner{padding: 0; border: 0}
+a, a:visited{text-decoration: none;}
+ul, li{list-style: none}
+img{vertical-align: top}
+h1, h2, h3, h4, h5, h6{font-size: inherit}

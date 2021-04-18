@@ -1,0 +1,62 @@
+@import "./Container";
+
+.headerFixed {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: #2a2e48;
+  //background: url("../img/fone.jpg") no-repeat center;
+  //background-size: cover;
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    padding: 38px;
+    justify-content: space-between;
+
+
+    .DropDown {
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      .nav__link {
+        margin-left: 59px;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.75;
+        transition: opacity .2s linear;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    @extend .container
+  }
+
+  @media (max-width: 991px) {
+    .header .header__inner .nav {
+      display: none;
+    }
+
+    .header .header__inner .DropDown {
+      display: block;
+    }
+  }
+}
+
+

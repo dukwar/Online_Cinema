@@ -1,0 +1,46 @@
+@import "../../helpersSCSS/Container";
+
+.news {
+  background-color: #212226;
+
+  .news__inner {
+    height: auto;
+    padding-bottom: 5rem;
+
+
+    .header {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #FFFFFF;
+    }
+
+    .news__items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      color: #FFFFFF;
+    }
+
+    @extend .container
+  }
+}
+
+
+@media (max-width: 992px) {
+  .news .news__inner .news__items {
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+  
+}
+
+@media (max-width: 780px) {
+  .news .news__inner .news__items {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}

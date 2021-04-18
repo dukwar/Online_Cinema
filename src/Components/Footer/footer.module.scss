@@ -1,0 +1,62 @@
+@import "../../helpersSCSS/Container";
+@import "../../helpersSCSS/vars";
+
+
+.footer {
+  background-color: #0c0c0c;
+
+  .footer__inner {
+    background-color: #0c0c0c;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .social {
+      display: flex;
+      margin-bottom: 2rem;
+    }
+
+
+    @extend .container
+  }
+
+
+
+}
+
+.footer__info {
+  margin-top: 1rem;
+  color: rgba($white, .4);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+
+  .regals__col_1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .regals__col_2 {
+    display: flex;
+    justify-content: center;
+
+    & p {
+      margin-left: 10px;
+    }
+
+
+
+
+  }
+
+  .regals__col_3 {
+    display: flex;
+    justify-content: center;
+  }
+  @extend .container
+}
