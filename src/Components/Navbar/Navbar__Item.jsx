@@ -3,7 +3,9 @@ import classNames from "classnames";
 import {NavLink} from "react-router-dom";
 
 
-function NavbarItem({children, onClick, navBetween, className, filter, ...attrs}) {
+function NavbarItem({children, onClick, navBetween, className, onMouseMove, onMouseLeave, filter, ...attrs}) {
+
+    
 
 
     const onClickAction = e => {
@@ -28,6 +30,8 @@ function NavbarItem({children, onClick, navBetween, className, filter, ...attrs}
             <Tag
                 className={classes}
                 onClick={onClickAction}
+                onMouseMove={onMouseMove}
+                // onFocus={onMouseLeave}
                 filter={filter}
                 {...attrs}
             >{children}</Tag>

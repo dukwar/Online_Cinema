@@ -3,16 +3,17 @@
 
 
 .footer {
-  background-color: #0c0c0c;
+  background-color: #2c2d31;
 
   .footer__inner {
-    background-color: #0c0c0c;
+    background-color: #2c2d31;
     padding-top: 5rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid lightgray;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     .social {
       display: flex;
@@ -28,6 +29,7 @@
 }
 
 .footer__info {
+
   margin-top: 1rem;
   color: rgba($white, .4);
   width: 100%;

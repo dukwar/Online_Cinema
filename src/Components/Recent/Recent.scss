@@ -7,7 +7,6 @@
 }
 
 .recent__main {
-
   padding: 4rem 20px;
   display: grid;
   grid-template-columns: repeat(2, [col] 1fr);
@@ -17,9 +16,7 @@
   .recent__trailer {
     background-color: #131415;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 3px 22px -4px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px 3px 22px -4px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 3px 22px -4px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 25px #000000;
     max-height: 1500px;
 
 

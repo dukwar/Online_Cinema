@@ -1,8 +1,17 @@
 @import "../../../helpersSCSS/vars";
 .slider {
-  background-image: url("https://images.wallpaperscraft.ru/image/pyatna_ten_temnyy_cvet_38223_2560x1080.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  //background-image: url("https://images.kinomax.ru/conv/poster/5471/p_ac75e67.jpg");
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background: linear-gradient(94deg, rgba(203,186,186,1) 7%, rgba(54,65,108,1) 48%, rgba(2,2,5,1) 100%);
+
+  //background: linear-gradient(94deg, rgba(120,110,110,1) 7%, rgba(21,33,41,1) 54%, rgba(5,9,11,1) 100%);
+
+  background: rgb(242,230,230);
+  background: linear-gradient(93deg, rgba(242,230,230,1) 7%, rgba(52,76,92,1) 49%, rgba(5,9,11,1) 100%);
+
+
+
 
   display: flex;
   align-items: center;

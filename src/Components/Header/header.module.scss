@@ -9,15 +9,15 @@
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: $headerColor;
-}
+  background-image: radial-gradient( circle farthest-corner at -10.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, rgba(19,30,37,1) 24.5%, rgba(19,30,37,1) 66% );}
 
 .header__inner {
+  position: relative;
   width: 100%;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: $white;
 
   @extend .container
@@ -25,11 +25,15 @@
 }
 
 .header__logo {
-  margin-right: auto;
+
   font-size: 2rem;
   font-weight: 500;
 
   & span {
 
   }
+
+
 }
+
+

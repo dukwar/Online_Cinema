@@ -64,15 +64,11 @@
 // Buttons
 // =========================
 
-.btn {
-  background-color: var(--color-primary);
-  border: none;
+.btn2 {
   border-radius: 0.125rem;
   color: white;
   cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 1rem 2.5rem 1.125rem;
+  transition: background .2s linear;
 
   &:focus {
     outline-color: var(--color-focus);
@@ -84,6 +80,7 @@
   &:active {
     transform: translateY(1px);
   }
+
 }
 
 
@@ -102,6 +99,7 @@
 
   .btn {
     --size: 3rem;
+
 
     align-items: center;
     background-color: transparent;
@@ -167,6 +165,8 @@
   flex-direction: column;
   height: var(--slide-height);
   width: var(--slide-width);
+  box-shadow: 2px 2px 25px #000000;
+
 
   justify-content: center;
   margin: 0 var(--slide-margin);

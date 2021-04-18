@@ -5,6 +5,7 @@ import Slider from "./helpersSCSS/Slider";
 import News from "./Components/News/news";
 import React from "react";
 import Footer from "./Components/Footer/footer";
+import HeaderContainer from "./Components/Header/headerContainer";
 
 
 
@@ -12,7 +13,7 @@ import Footer from "./Components/Footer/footer";
 function App({children}) {
   return (
     <div >
-        <Header />
+        <HeaderContainer />
         <Slider size={200}/>
 
       <Main>

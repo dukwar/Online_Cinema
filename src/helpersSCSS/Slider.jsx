@@ -27,14 +27,17 @@ let Slider = ({
 
 
             <Carousel >
+
                 <Carousel.Item>
+
                     <img
                         className="d-block w-100"
                         src={Photo1}
                         alt="First slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="caption">
                         <Intro />
+
                     </Carousel.Caption>
                 </Carousel.Item>
 

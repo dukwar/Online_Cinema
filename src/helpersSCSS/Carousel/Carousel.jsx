@@ -1,5 +1,6 @@
 import './Carousel.scss'
 import React from "react";
+import Button from "../../Components/Button/button";
 
 const slideData = [
     {
@@ -93,14 +94,9 @@ class Slide extends React.Component {
                     </div>
 
                     <article className="slide__content">
-                        {/*<h2 className="slide__headline">{headline}</h2>*/}
-                        <button className="slide__action btn">{button}</button>
+                        <Button className='btn2'>Смотреть трейлер</Button>
                     </article>
                 </li>
-                {/*<li className={classNames}>*/}
-                {/*    <h2 className="slide__headline">{headline}</h2>*/}
-                {/*</li>*/}
-
             </>
 
 
