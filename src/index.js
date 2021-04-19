@@ -7,6 +7,8 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import RecentContainer from "./Components/Recent/RecentContainer";
 import {Provider} from "react-redux";
 import store from "./Redux/store";
+import AllFilms from "./Components/allFilms/allFilms";
+import TimeSessionContainer from "./Components/allFilms/allFilmsContainer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +17,8 @@ ReactDOM.render(
               <Provider store={store}>
                   <App>
                       <Route path={'/home'} component={RecentContainer} />
+                      <Route path={'/timesession'} component={TimeSessionContainer} />
+
                   </App>
               </Provider>
 

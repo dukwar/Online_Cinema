@@ -6,6 +6,7 @@ import FilmItem from "./Recent__Item/film__item";
 import SliderBlock from "./SliderBlock/SliderBlock";
 import Preloader from "../../helpersSCSS/Preloader/Preloader";
 import News from "../News/news";
+import Slider from "../../helpersSCSS/Slider";
 
 function Recent(props) {
 
@@ -17,6 +18,7 @@ function Recent(props) {
     return (
         <>
             <div className='main'>
+                <Slider size={200}/>
                 <div className={'nav__recent'}>
                     <NavbarGroup>
                         <Navbar__Item onClick={props.handleSetFilter} filter={'movies'} navBetween>

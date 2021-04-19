@@ -111,7 +111,7 @@
     width: var(--size);
 
     &:focus {
-      border-color: var(--color-focus);
+      border-color: $secondaryColor;
       outline: none;
     }
 

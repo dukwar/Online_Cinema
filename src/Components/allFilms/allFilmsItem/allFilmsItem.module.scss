@@ -1,0 +1,68 @@
+@import "../../../helpersSCSS/Container";
+@import "../../../helpersSCSS/vars";
+
+.film {
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2rem;
+  margin-bottom: 5rem;
+
+  .film__img {
+    max-width: 300px;
+    height: auto;
+
+
+    & img {
+      width: 100%;
+
+
+    }
+
+    .film__img__description {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #FFFFFF;
+      margin-top: 1rem;
+      font-size: 16px;
+      line-height: 1.8rem;
+
+
+      .agelimit {
+        padding: 3px 3px;
+        background-color: #ff7c00;
+        border-radius: 5px;
+
+      }
+
+    }
+  }
+
+  .film__description {
+
+    color: #FFFFFF;
+
+    & h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #FFFFFF;
+    }
+
+
+    & .last__description {
+      display: flex;
+      & .second__decrp__col {
+        margin-left: 2rem;
+      }
+
+
+
+
+    }
+  }
+
+
+  @extend .container
+}
+

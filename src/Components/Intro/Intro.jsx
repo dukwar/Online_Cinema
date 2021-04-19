@@ -12,7 +12,7 @@ function Intro() {
                     <h1>LATEST ONLINE MOVIES</h1>
                     <h4>IN SPACE NO ONE CAN HEAR YOU SCREAM.</h4>
                     <Button>
-                        WATCH TRAILER
+                        Смотреть трейлер
                     </Button>
                 </div>
             </div>

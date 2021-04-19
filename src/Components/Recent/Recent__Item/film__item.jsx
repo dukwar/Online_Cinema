@@ -13,7 +13,7 @@ function FilmItem(props) {
                 <img className="films__img" src={props.filmImage} alt=""/>
                 <div className="film__animate">
                     <Button className="filmsInTitle">
-                        WATCH TRAILER
+                        Смотреть трейлер
                     </Button>
                 </div>
             </div>

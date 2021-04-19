@@ -14,7 +14,7 @@ function App({children}) {
   return (
     <div >
         <HeaderContainer />
-        <Slider size={200}/>
+
 
       <Main>
         {children}

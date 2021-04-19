@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(2, [col] 1fr);
   grid-gap: 10px;
-  margin-top: 5rem;
+  margin-top: 2rem;
 
   .recent__trailer {
     background-color: #131415;
@@ -68,7 +68,7 @@
 
 
 .nav__recent {
-  padding-top: 30px;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
 

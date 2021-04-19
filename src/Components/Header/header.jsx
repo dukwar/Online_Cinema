@@ -13,12 +13,12 @@ function Header({handleDropdownDel, handleDropdown, isDrop}) {
 
                 <div className={cl.header__inner}>
 
-                    <h1 className={cl.header__logo}>Киномакс</h1>
+                    <h1 className={cl.header__logo}>Кинопоиск</h1>
                     <NavbarGroup>
                         <NavbarItem onMouseLeave={handleDropdownDel} onMouseMove={handleDropdown} to={'/home'}>
                           Фильмы
                         </NavbarItem>
-                        <NavbarItem>
+                        <NavbarItem to={'/timesession'}>
                             Расписание
                         </NavbarItem>
                         <NavbarItem>
