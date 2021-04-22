@@ -10,9 +10,15 @@ import Slider from "../../helpersSCSS/Slider";
 
 function Recent(props) {
 
+console.log('Recent')
 
     if (props.isFetching) {
-        return <Preloader/>
+        return (
+            <div className='preloader'>
+                <Preloader/>
+            </div>
+
+        )
     }
 
     return (
@@ -61,7 +67,7 @@ function Recent(props) {
                                 </div>
 
                                 <div className="trailer__data__inner">
-                                    <h6>Genres :</h6>
+                                    <h6>Жанр :</h6>
                                     <p>Боевик | Триллер | Семья</p>
                                 </div>
 

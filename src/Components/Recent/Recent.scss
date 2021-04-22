@@ -4,6 +4,14 @@
 .main {
   //background: linear-gradient(90deg, rgba(0,21,36,1) 0%, rgba(58,18,80,1) 35%, rgba(109,49,142,1) 100%);
   background-color: #212226;
+
+}
+
+.preloader {
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recent__main {
@@ -34,15 +42,22 @@
 
         .trailer__data__inner {
           display: flex;
+          margin-top: 1rem;
+
+          align-items: flex-start;
 
 
 
           & h6 {
             min-width: 100px;
+            line-height: 1.5rem;
             color: $white;
+
+
           }
 
           & p {
+            line-height: 1.5rem;
             margin-left: 10px;
             color: $white;
           }

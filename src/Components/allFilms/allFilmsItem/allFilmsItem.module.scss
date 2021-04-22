@@ -2,15 +2,13 @@
 @import "../../../helpersSCSS/vars";
 
 .film {
-
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
 
   .film__img {
-    max-width: 300px;
-    height: auto;
+    min-width: 200px;
 
 
     & img {
@@ -52,11 +50,19 @@
 
     & .last__description {
       display: flex;
-      & .second__decrp__col {
-        margin-left: 2rem;
+
+      & .first__decrp__col {
+
+        & p {
+          margin-top: 1rem;
+        }
+
       }
 
-
+      & .second__decrp__col {
+        margin-left: 2rem;
+        margin-bottom: 1.2rem;
+      }
 
 
     }

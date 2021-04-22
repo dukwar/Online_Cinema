@@ -1,5 +1,6 @@
 import {createStore, compose, applyMiddleware, combineReducers} from 'redux';
 import RecentReducer from "./RecentReducer";
+import FilmReducer from "./FilmReducer";
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers =
@@ -10,7 +11,8 @@ const composeEnhancers =
 /* eslint-enable */
 
 const rootReducer = combineReducers({
-    RecentReducer
+    RecentReducer,
+    FilmReducer,
 })
 
 

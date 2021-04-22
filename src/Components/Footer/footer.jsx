@@ -12,13 +12,11 @@ function Footer() {
         <>
             <div className={cl.footer}>
                 <div className={cl.footer__inner}>
-                    <div className= {cl.social}>
-                        <TwitterFooter />
-                        <FacebookFooter />
-                        <LinkedInFooter />
-                        <GoogleFooter />
-
-
+                    <div className={cl.social}>
+                        <TwitterFooter/>
+                        <FacebookFooter/>
+                        <LinkedInFooter/>
+                        <GoogleFooter/>
                     </div>
 
                     <NavbarGroup>
@@ -57,17 +55,8 @@ function Footer() {
                         <p>Проект Клопова Д. А. :)</p>
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
-
-
         </>
-
 
 
     );

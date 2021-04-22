@@ -31,6 +31,7 @@ function NavbarItem({children, onClick, navBetween, className, onMouseMove, onMo
                 className={classes}
                 onClick={onClickAction}
                 onMouseMove={onMouseMove}
+                // onMouseLeave={onMouseLeave}
                 // onFocus={onMouseLeave}
                 filter={filter}
                 {...attrs}

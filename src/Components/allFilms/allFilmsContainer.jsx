@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from "react";
-import cl from "./allFilms.module.scss"
-import Pagination from "../../helpersSCSS/Pagination/pagination";
 import AllFilms from "./allFilms";
 import {connect} from "react-redux";
 import {addFilmsAC, isFetchingAC, setFilter} from "../../Redux/ActionCreators";
 import axios from "axios";
+import Preloader from "../../helpersSCSS/Preloader/Preloader";
 
 
 function AllFilmsContainer(props) {
 
+    // set params for request
     let [page, setPage] = useState(1)
 
-    let [queryParams, setParams ] = useState({
+    let [queryParams, setParams] = useState({
         baseUrl: 'https://api.kinopoisk.cloud',
         message: 'message'
     })
@@ -19,31 +19,53 @@ function AllFilmsContainer(props) {
     const {baseUrl, message} = queryParams
     const {filter} = props
 
+    // set params for active arrow pagination
+    const [active, setActive] = useState(true)
+    const handleActiveClick = () => {
+        setActive(true)
+    }
+    const handleDeactiveClick = () => {
+        setActive(false)
+    }
 
-
-
+    // request
     useEffect(() => {
         props.isFetchingAC(true)
-        axios.get(`${baseUrl}/${filter}/all/page/${page}/token/d93a48852f8dcb901220df17ce828046`)
-            .then(response => response.data)
-            .then(response => props.addFilmsAC(response[filter]))
-            .catch((response) => console.log(response[message]))
-
+        // axios.get(`${baseUrl}/${filter}/all/page/${page}/token/d93a48852f8dcb901220df17ce828046`)
+        //     .then(response => response.data)
+        //     .then(response => props.addFilmsAC(response[filter]))
+        //     .catch((response) => console.log(response[message]))
+        //
         setTimeout(() => {
             props.isFetchingAC(false)
-        }, 4000)
+        }, 1000)
 
 
     }, [filter, page])
 
-   const handleSetPage = ({target}) => {
-       const page = +target.getAttribute('data-name');
-       // let { page } = queryParams;
-       debugger
 
-        setPage(page)
-   }
+    // set activePage
+    const handleSetPage = ({target}) => {
+        const pageTo = target.getAttribute('data-name');
+        // let { page } = queryParams;
+        debugger
 
+        if (!isNaN(pageTo)) {
+            setPage(Number(pageTo))
+        } else {
+            switch (pageTo) {
+                case 'next':
+                    setPage(page + 1)
+                    break
+                case 'prev':
+                    setPage(page - 1)
+                    break
+
+                default:
+                    return null
+            }
+        }
+    }
 
 
     return (
@@ -51,10 +73,13 @@ function AllFilmsContainer(props) {
             <AllFilms films={props.films}
                       isFetching={props.isFetching}
                       setPage={handleSetPage}
+                      page={page}
+                      active={active}
+                      handleActiveClick={handleActiveClick}
+                      handleDeactiveClick={handleDeactiveClick}
             />
 
         </>
-
 
 
     );

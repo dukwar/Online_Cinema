@@ -1,24 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {ArrowPageLeft, ArrowPageRight} from '../imgFiles';
 
 import './pagination.scss';
 
 
-const renderPaginationBtns = (setPage, page = 0, lastPage = 20) => {
+const renderPaginationBtns = (setPage, page, lastPage = 20) => {
     const startBtns = [page, page + 1, page + 2, page + 3, page + 4];
     const gapBtns = [page - 2, page - 1, page];
-    const lastBtns = [lastPage - 1];
+    const middleBtn = [ '...' ];
+    const lastBtns = [lastPage - 3, lastPage - 2, lastPage - 1];
 
     let btnsArr = [];
 
     if (page < lastPage - 6) {
-        btnsArr = [...startBtns, ...lastBtns]
+        btnsArr = [...startBtns, ...middleBtn, ...lastBtns]
     } else if (page < lastPage - 4) {
-        btnsArr = [...gapBtns, ...lastBtns]
+        btnsArr = [...gapBtns, ...middleBtn, ...lastBtns]
     } else if (page < lastPage - 3) {
         btnsArr = [...gapBtns, ...lastBtns] // last 6 pages
     } else {
-        btnsArr = [ ...lastBtns] // last 3 pages
+        btnsArr = [...middleBtn, ...lastBtns] // last 3 pages
     }
 
     return btnsArr.map(num => {
@@ -32,25 +34,31 @@ const renderPaginationBtns = (setPage, page = 0, lastPage = 20) => {
 };
 
 
-const Pagination = ({setPage, page, lastPage }) => (
+const Pagination = ({setPage, page, lastPage, active, delActive, setActive }) => {
 
-    <div className="paginationWrapper">
-        { page !== 0 && <button onClick={setPage} data-name="prev">{'<<'}</button> }
-        {renderPaginationBtns(setPage, page, lastPage)}
-        { page !== lastPage - 1 && <button onClick={setPage} data-name="next">{'>>'}</button> }
-    </div>
-);
 
-Pagination.propTypes = {
-    handleChange: PropTypes.func,
-    options: PropTypes.array,
-    value: PropTypes.number,
+
+
+    return (
+        <div className="paginationWrapper">
+            { page !== 0 && <button  data-name="prev"><ArrowPageLeft onClickPage={setPage} onClick={setActive} active={active} /></button> }
+            {renderPaginationBtns(setPage, page, lastPage)}
+            { page !== lastPage - 1 && <button  data-name="next"> <ArrowPageRight onClickPage={setPage} onClick={delActive} active={!active} /> </button> }
+        </div>
+    );
 }
 
-Pagination.defaultProps = {
-    onChange: () => {},
-    options: [],
-    value: 0,
-}
+
+// Pagination.propTypes = {
+//     handleChange: PropTypes.func,
+//     options: PropTypes.array,
+//     value: PropTypes.number,
+// }
+//
+// Pagination.defaultProps = {
+//     onChange: () => {},
+//     options: [],
+//     value: 0,
+// }
 
 export default Pagination;

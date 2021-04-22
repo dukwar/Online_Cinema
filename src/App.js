@@ -6,6 +6,7 @@ import News from "./Components/News/news";
 import React from "react";
 import Footer from "./Components/Footer/footer";
 import HeaderContainer from "./Components/Header/headerContainer";
+import Sidebar from "./helpersSCSS/SideBar/sidebar";
 
 
 
@@ -13,7 +14,8 @@ import HeaderContainer from "./Components/Header/headerContainer";
 function App({children}) {
   return (
     <div >
-        <HeaderContainer />
+        {/*<HeaderContainer />*/}
+        <Sidebar />
 
 
       <Main>

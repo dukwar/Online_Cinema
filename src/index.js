@@ -9,6 +9,9 @@ import {Provider} from "react-redux";
 import store from "./Redux/store";
 import AllFilms from "./Components/allFilms/allFilms";
 import TimeSessionContainer from "./Components/allFilms/allFilmsContainer";
+import FilmContainer from "./Components/allFilms/FIlmItem/filmContainer";
+import RecentContainerMemo from "./Components/Recent/RecentContainer";
+import Sidebar from "./helpersSCSS/SideBar/sidebar";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,8 +19,10 @@ ReactDOM.render(
           <Switch>
               <Provider store={store}>
                   <App>
-                      <Route path={'/home'} component={RecentContainer} />
+                      <Route path={'/home'} component={RecentContainerMemo} />
                       <Route path={'/timesession'} component={TimeSessionContainer} />
+                      <Route path={'/film/:id?'} component={FilmContainer} />
+                      {/*<Route path={'/sidebar'} component={Sidebar} />*/}
 
                   </App>
               </Provider>

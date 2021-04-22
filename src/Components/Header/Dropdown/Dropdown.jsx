@@ -1,14 +1,15 @@
 import cl from "./Dropdown.module.scss"
+import {useRef} from "react";
 
-function Dropdown({onMouseLeave}) {
+function Dropdown({onMouseLeave, handleCheck}) {
 
-
+    const menuRef = useRef()
 
     return (
 
-        <div onMouseLeave={onMouseLeave} className={cl.dropdown}>
+        <div ref={menuRef} onMouseLeave={onMouseLeave} className={cl.dropdown}>
             <div className={cl.dropdown__inner}>
-                <div  className={cl.dropdown__col}>
+                <div className={cl.dropdown__col}>
                     <h4>Фильмы в прокате</h4>
 
                     <div>
@@ -26,7 +27,7 @@ function Dropdown({onMouseLeave}) {
                 <div className={cl.dropdown__col}></div>
                 <div className={cl.dropdown__col}>
                     <h4>Скоро в прокате</h4>
-                    <div >
+                    <div>
                         <p>Форсаж 9</p>
                         <p>Властелин Колец: Две крепости</p>
                         <p>Властелин Колец: Возвращение Короля</p>

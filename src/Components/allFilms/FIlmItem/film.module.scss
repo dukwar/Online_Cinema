@@ -1,0 +1,159 @@
+@import "../../../helpersSCSS/Container";
+@import "../../../helpersSCSS/vars";
+
+.film {
+  margin-top: 70px;
+
+  .header {
+
+    .header__img {
+      width: 100%;
+      height: 550px;
+      background-image: url("https://files.123freevectors.com/wp-content/original/114172-orange-and-yellow-diagonal-stripes-background-vector.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      .background {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+        color: #FFFFFF;
+
+        .film__content {
+          width: 100%;
+          height: 100%;
+          padding-top: 3rem;
+
+
+          .film__content__inner {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+
+
+            div {
+
+              p {
+                margin-bottom: 2rem;
+              }
+
+              .title {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+
+
+                & h2 {
+                  font-weight: 600;
+                  font-size: 2rem;
+                }
+
+                .agelimit {
+                  font-size: 1.5rem;
+                  margin-left: 1rem;
+                }
+              }
+            }
+
+
+            img {
+              max-width: 300px;
+              box-shadow: 2px 2px 25px #000000;
+
+            }
+
+
+            .last__description {
+              display: grid;
+              margin-top: 8rem;
+
+              margin-left: 4rem;
+
+
+              .cols {
+                display: flex;
+
+                .first__decrp__col {
+
+                  p {
+                    margin-top: 1rem;
+                    margin-bottom: 0;
+                  }
+
+                }
+
+                .second__decrp__col {
+                  margin-left: 2rem;
+                  margin-bottom: 1.2rem;
+
+                  p {
+                    margin-top: 1rem;
+                    margin-bottom: 0;
+                  }
+                }
+              }
+
+              .premiere {
+                display: flex;
+                align-self: flex-end;
+
+
+                .premiere__world {
+
+                  margin-left: 2rem;
+
+                  h6 {
+                    font-size: 1.1rem;
+                    line-height: 1.8rem;
+
+                  }
+
+                }
+
+                .premiere__russia {
+
+
+                  h6 {
+                    font-size: 1.1rem;
+                    line-height: 1.8rem;
+
+                  }
+
+                }
+              }
+            }
+          }
+
+          @extend .container
+        }
+      }
+    }
+  }
+
+
+  .main__description {
+    color: #FFFFFF;
+    margin-top: 10rem;
+
+
+    @extend .container
+  }
+
+
+  .trailer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+
+
+    @extend .container
+  }
+}
+
+
+
+
+

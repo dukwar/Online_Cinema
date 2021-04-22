@@ -3,9 +3,9 @@
 
 
 *{padding: 0; margin: 0; border: 0;}
-*, *:before, *:after {box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+*, *:before, *:after {box-sizing: border-box; }
 a:focus, a:active{outline: none;}
-html, body{height: 100%; width: 100%; font-size: 100%; margin: 0 auto;  }
+html, body{height: 100%; width: 100%; font-size: 100%; margin: 0 auto;   }
 body{background: #212226; }
 //body{ overflow-x: hidden }
 input, button, textarea{font-family: 'Montserrat', sans-serif;}
@@ -15,4 +15,5 @@ button::-moz-focus-inner{padding: 0; border: 0}
 a, a:visited{text-decoration: none;}
 ul, li{list-style: none}
 img{vertical-align: top}
-h1, h2, h3, h4, h5, h6{font-size: inherit}
+h1, h2, h3, h4, h5, h6{margin:0;  font-family: 'Roboto', sans-serif;}
+p, button{margin:0; font-family: 'Open Sans', sans-serif}

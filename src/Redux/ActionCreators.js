@@ -1,6 +1,14 @@
-import {ADDFILM, ISFETCHING, SETFILTER} from "./constants";
+import {ADDFILM, ADDFILMS, ISFETCHING, SETFILTER} from "./constants";
 
 export const addFilmsAC = (data) => {
+    return {
+        type: ADDFILMS,
+        data
+    }
+
+}
+
+export const addFilmAC = (data) => {
     return {
         type: ADDFILM,
         data

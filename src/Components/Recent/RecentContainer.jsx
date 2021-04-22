@@ -5,52 +5,60 @@ import axios from "axios";
 import {addFilmsAC, isFetchingAC, setFilter} from "../../Redux/ActionCreators";
 
 
-function RecentContainer(props) {
+const RecentContainerMemo = React.memo(
+    function RecentContainer(props) {
 
-    let [queryParams, setParams ] = useState({
-        baseUrl: 'https://api.kinopoisk.cloud',
-        page: 1,
-        message: 'message'
-    })
-
-    const {baseUrl, page, message} = queryParams
-    const {filter} = props
+        console.log('RecentContainer')
 
 
 
+        let [queryParams, setParams ] = useState({
+            baseUrl: 'https://api.kinopoisk.cloud',
+            page: 1,
+            message: 'message'
+        })
 
-    // useEffect(() => {
-    //     props.isFetchingAC(true)
-    //     axios.get(`${baseUrl}/${filter}/all/page/${page}/token/5d1a70fffb0fa08c373285cd69378048`)
-    //         .then(response => response.data)
-    //         .then(response => props.addFilmsAC(response[filter]))
-    //         .catch((response) => console.log(response[message]))
-    //
-    //     setTimeout(() => {
-    //         props.isFetchingAC(false)
-    //     }, 2000)
-    //
-    //
-    // }, [filter])
+        const {baseUrl, page, message} = queryParams
+        const {filter} = props
 
-    let handleSetFilter = (filter) => {
-        props.setFilter(filter)
+
+
+
+        // useEffect(() => {
+        //     props.isFetchingAC(true)
+        //     axios.get(`${baseUrl}/${filter}/all/page/${page}/token/5d1a70fffb0fa08c373285cd69378048`)
+        //         .then(response => response.data)
+        //         .then(response => props.addFilmsAC(response[filter]))
+        //         .catch((response) => console.log(response[message]))
+        //
+        //     setTimeout(() => {
+        //         props.isFetchingAC(false)
+        //     }, 1000)
+        //
+        //
+        // },[])
+
+        let handleSetFilter = (filter) => {
+            props.setFilter(filter)
+        }
+
+
+
+
+
+        return (
+            <Fragment>
+                <Recent films={props.films}
+                        isFetching={props.isFetching}
+                        handleSetFilter={handleSetFilter}
+
+                />
+            </Fragment>
+        );
     }
 
 
-
-
-
-    return (
-        <Fragment>
-            <Recent films={props.films}
-                    isFetching={props.isFetching}
-                    handleSetFilter={handleSetFilter}
-
-            />
-        </Fragment>
-    );
-}
+)
 
 const MapStateToProps = (state) => {
     return {
@@ -60,4 +68,4 @@ const MapStateToProps = (state) => {
     }
 }
 
-export default connect(MapStateToProps, {addFilmsAC, isFetchingAC, setFilter})(RecentContainer);
+export default connect(MapStateToProps, {addFilmsAC, isFetchingAC, setFilter})(RecentContainerMemo);
