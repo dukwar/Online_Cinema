@@ -12,6 +12,7 @@ import TimeSessionContainer from "./Components/allFilms/allFilmsContainer";
 import FilmContainer from "./Components/allFilms/FIlmItem/filmContainer";
 import RecentContainerMemo from "./Components/Recent/RecentContainer";
 import Sidebar from "./helpersSCSS/SideBar/sidebar";
+import Register from "./Components/Register/register";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,8 +23,7 @@ ReactDOM.render(
                       <Route path={'/home'} component={RecentContainerMemo} />
                       <Route path={'/timesession'} component={TimeSessionContainer} />
                       <Route path={'/film/:id?'} component={FilmContainer} />
-                      {/*<Route path={'/sidebar'} component={Sidebar} />*/}
-
+                      <Route path={'/register'} component={Register} />
                   </App>
               </Provider>
 

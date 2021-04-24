@@ -23,20 +23,18 @@ let Slider = ({
     const elemSize = size ? { height: `${size}px` } : null;
 
     return (
-        <div >
+        <div>
 
 
             <Carousel >
 
                 <Carousel.Item>
-
                     <img
                         className="d-block w-100"
                         src={Photo1}
                         alt="First slide"
                     />
                     <Carousel.Caption className="caption">
-                        <Intro />
 
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -48,7 +46,6 @@ let Slider = ({
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <Intro />
                     </Carousel.Caption>
 
 
@@ -61,7 +58,6 @@ let Slider = ({
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <Intro />
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

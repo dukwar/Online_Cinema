@@ -2,6 +2,7 @@
 @import "../../helpersSCSS/vars";
 
 .main {
+  position: relative;
   //background: linear-gradient(90deg, rgba(0,21,36,1) 0%, rgba(58,18,80,1) 35%, rgba(109,49,142,1) 100%);
   background-color: #212226;
 
@@ -75,6 +76,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 10px;
+    justify-items: center;
     padding: 0 20px;
   }
 

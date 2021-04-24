@@ -28,14 +28,15 @@ function AllFilmsContainer(props) {
         setActive(false)
     }
 
+
     // request
     useEffect(() => {
         props.isFetchingAC(true)
-        // axios.get(`${baseUrl}/${filter}/all/page/${page}/token/d93a48852f8dcb901220df17ce828046`)
-        //     .then(response => response.data)
-        //     .then(response => props.addFilmsAC(response[filter]))
-        //     .catch((response) => console.log(response[message]))
-        //
+        axios.get(`${baseUrl}/${filter}/all/page/${page}/token/5d1a70fffb0fa08c373285cd69378048`)
+            .then(response => response.data)
+            .then(response => props.addFilmsAC(response[filter]))
+            .catch((response) => console.log(response[message]))
+
         setTimeout(() => {
             props.isFetchingAC(false)
         }, 1000)

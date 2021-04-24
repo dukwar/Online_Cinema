@@ -66,7 +66,7 @@ const RecentReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case ADDFILMS:
-            debugger
+
             return {
                 ...state,
                 films: [...action.data]

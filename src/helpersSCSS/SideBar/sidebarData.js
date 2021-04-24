@@ -52,8 +52,8 @@ export const SidebarData = [
     },
 
     {
-        title: 'Продакшн',
-        path: '/products',
+        title: 'Регистрация',
+        path: '/register',
         icon: <FaIcons.FaCartPlus />
     },
 

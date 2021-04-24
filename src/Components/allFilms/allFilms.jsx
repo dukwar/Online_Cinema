@@ -37,7 +37,7 @@ function AllFilms({setPage, films, page, isFetching, active, handleActiveClick, 
                     {
                         films.map(film => {
                             return <AllFilmsItem
-                                id={film.id}
+                                id={film.id_kinopoisk}
                                 title={film.title}
                                 country={film.countries}
                                 poster={film.poster}

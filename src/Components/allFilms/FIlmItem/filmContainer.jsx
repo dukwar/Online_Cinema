@@ -5,9 +5,10 @@ import {compose} from "redux";
 import {withRouter} from "react-router";
 import {isFetchingAC, addFilmAC} from "../../../Redux/ActionCreators";
 import axios from "axios";
+import Preloader from "../../../helpersSCSS/Preloader/Preloader";
 
 
-function FilmContainer({film, match, filter, isFetchingAC, addFilmAC}) {
+function FilmContainer({film, match, filter, isFetching, isFetchingAC, addFilmAC}) {
 
     let id = match.params.id
 
@@ -22,24 +23,46 @@ function FilmContainer({film, match, filter, isFetchingAC, addFilmAC}) {
 
     // request
     useEffect(() => {
-        // isFetchingAC(true)
-        // axios.get(`${baseUrl}/${filter}/all/page/${page}/token/d93a48852f8dcb901220df17ce828046`)
-        //     .then(response => response.data)
-        //     .then(response => addFilmAC(response[filter]))
-        //     .catch((response) => console.log(response[message]))
-        //
-        // setTimeout(() => {
-        //     isFetchingAC(false)
-        // }, 1000)
+        isFetchingAC(true)
+        axios.get(`${baseUrl}/${filter}/${id}/token/5d1a70fffb0fa08c373285cd69378048`)
+            .then(response => response.data)
+            .then(response => addFilmAC(response))
+            .catch((response) => console.log(response[message]))
+
+        setTimeout(() => {
+            isFetchingAC(false)
+        }, 2000)
 
 
-    }, [filter])
+    }, [])
 
+    if (isFetching) {
+        return (
+            <div>
+                <Preloader/>
+            </div>
+        )
+    }
 
 
     return (
         <>
-            <Film film={film} />
+            <Film title={film.title}
+                  description={film.description}
+                  trailer={film.trailer}
+                  actors={film.actors}
+                  countries={film.countries}
+                  genres={film.genres}
+                  directors={film.directors}
+                  age={film.age}
+                  premiereWorld={film.premiere_world}
+                  premiereRussia={film.premiere_russia}
+                  poster={film.poster}
+                  year={film.year}
+                  duration={film.duration}
+                  ratingKinopoisk={film.rating_kinopoisk}
+
+            />
 
 
 
@@ -52,7 +75,8 @@ function FilmContainer({film, match, filter, isFetchingAC, addFilmAC}) {
 const MapStateToProps = (state) => {
     return {
         film: state.FilmReducer.film,
-        filter: state.RecentReducer.filter
+        filter: state.RecentReducer.filter,
+        isFetching: state.RecentReducer.isFetching
 
     }
 }

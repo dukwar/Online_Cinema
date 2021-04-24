@@ -1,12 +1,15 @@
 .intro {
+
+  z-index: 1000;
+
   display: grid;
   text-align: center;
-  margin-bottom: 10rem;
 
 
 
 }
 
 .slider__content {
+  color: #FFFFFF;
   justify-self: center;
 }

@@ -1,0 +1,20 @@
+.carItem {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 800px;
+
+  .carImg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: translate3d(50%, 50%, 0);
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 -130px;
+
+  }
+}
+

@@ -1,0 +1,93 @@
+.field__item {
+  position: relative;
+  padding: 2px 0;
+  margin-top: 2.4rem;
+  width: 75%;
+  border-bottom: 1px solid lightgray;
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: orange;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 1;
+    transition: all .2s ease;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 1;
+    transition: all 1s ease;
+
+  }
+
+  input {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: top;
+    border: 0 solid transparent;
+    outline: 0;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+
+  .reg__label {
+    position: absolute;
+    color: rgba(0, 0, 0, .4);
+    transition: all .4s ease;
+  }
+
+
+}
+
+
+.field__item.active {
+  &:before {
+    width: 100%;
+  }
+
+  .reg__label {
+    transform: translateY(-20px);
+    font-size: 13px;
+  }
+}
+
+.staticLabel {
+  transform: translateY(-20px);
+  font-size: 13px;
+}
+
+.field__item.isValid {
+
+  &:after {
+    width: 100%;
+
+  }
+}
+
+.validate__data {
+  font-size: 14px;
+  text-align: left;
+  color: red;
+  font-weight: 600;
+  border-bottom: 0;
+  padding: 0;
+  margin-top: 0;
+
+  @extend .field__item
+}

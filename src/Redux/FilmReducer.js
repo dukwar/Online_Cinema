@@ -11,6 +11,7 @@ const FilmReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case ADDFILM:
+            debugger
 
             return {
                 ...state,
