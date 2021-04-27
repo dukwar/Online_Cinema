@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import cl from './register.module.scss'
 import {useFormik} from "formik";
 import Input from "./input";
+import {NavLink} from "react-router-dom";
 
 
 function Register() {
@@ -11,6 +12,7 @@ function Register() {
         <>
             <div className={cl.register}>
                 <div className={cl.presentation}>
+
                     <div className={cl.presentation__wrapper}>
                         <div className={cl.logo__wrap}></div>
                         <ul className={cl.services__icons}>
@@ -53,20 +55,17 @@ function Register() {
                     </div>
                 </div>
                 <div className={cl.register__form}>
+                    <p className={cl.isLog}>Уже есть аккаунт на Яндексе? <NavLink to={"/login"}>Войти</NavLink> </p>
+
                     <div className={cl.form__panel}>
                         <div className={cl.form__title}>
                             <h1>Регистрация</h1>
                             <RegisterForm/>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </>
-
 
     );
 }
@@ -75,15 +74,20 @@ function Register() {
 const RegisterForm = () => {
 
 
+    const [toggle, setToggle] = useState(true)
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        login: '',
+        email: '',
+        password: '',
+        telephoneNumber: '',
+
+    }
+    console.log(toggle)
     const formik = useFormik({
-        initialValues: {
-            firstName: '',
-            lastName: '',
-            login: '',
-            email: '',
-            password: '',
-            telephoneNumber: ''
-        },
+        initialValues,
+
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
         },
@@ -119,6 +123,7 @@ const RegisterForm = () => {
 
 
     });
+
 
 
     const inputData = [
@@ -184,7 +189,24 @@ const RegisterForm = () => {
 
                 />)}
 
+
+
             <button className={cl.reg__button} type="submit">Зарегистрироваться</button>
+
+            <div className={cl.sub__confirm}>Нажимая кнопку «Зарегистрироваться»:</div>
+            <div className={cl.confirm__agreement}>
+                <input onClick={() => {
+                    setToggle(!toggle)
+                    formik.values.toggle = toggle}} type="checkbox"/>
+                <div className={cl.text__agreement}>Я принимаю условия Пользовательского соглашения и даю своё согласие
+                    данному сервису на обработку моей персональной информации на условиях,
+                    определенных Политикой конфиденциальности.</div>
+            </div>
+
+
+
+
+
         </form>
     );
 }

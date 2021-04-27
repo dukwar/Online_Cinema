@@ -1,6 +1,7 @@
 import React from "react";
 import cl from "./allFilmsItem.module.scss"
 import Navbar__Item from "../../Navbar/Navbar__Item";
+import PropTypes from "prop-types";
 
 
 
@@ -55,6 +56,18 @@ function AllFilmsItem({id, title, country, director, genres, poster, year, age, 
             </div>
         </>
     );
+}
+
+AllFilmsItem.propTypes = {
+    id: PropTypes.number,
+    title: PropTypes.string,
+    country: [],
+    director: [],
+    genres: [],
+    poster: PropTypes.string,
+    year: PropTypes.string,
+    age: PropTypes.string,
+    description: PropTypes.string
 }
 
 export default AllFilmsItem;

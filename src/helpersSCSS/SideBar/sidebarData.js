@@ -8,10 +8,10 @@ import * as RiIcons from "react-icons/ri"
 export const SidebarData = [
     {
         title: 'Главная страница',
-        path: '/home',
+        path: '/',
         icon: <AiIcons.AiFillHome />,
-        iconClosed: <RiIcons.RiArrowDownFill />,
-        iconOpened: <RiIcons.RiArrowUpFill />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened: <RiIcons.RiArrowUpSFill />,
         subNuv: [
             {
                 title: 'Кино',
@@ -32,8 +32,8 @@ export const SidebarData = [
         title: 'Кинотеатр',
         path: '/timesession',
         icon: <AiIcons.AiFillHome />,
-        iconClosed: <RiIcons.RiArrowDownFill />,
-        iconOpened: <RiIcons.RiArrowUpFill />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened:  <RiIcons.RiArrowUpSFill />,
         subNuv: [
             {
                 title: 'Фильмы в прокате ',
@@ -58,8 +58,8 @@ export const SidebarData = [
     },
 
     {
-        title: 'Команда разработки',
-        path: '/team',
+        title: 'Войти',
+        path: '/login',
         icon: <IoIcons.IoMdPeople />
     },
 

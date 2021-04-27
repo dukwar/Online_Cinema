@@ -4,6 +4,7 @@ import Pagination from "../../helpersSCSS/Pagination/pagination";
 import AllFilmsItem from "./allFilmsItem/allFilmsItem";
 import Preloader from "../../helpersSCSS/Preloader/Preloader";
 import Navbar__Item from "../Navbar/Navbar__Item";
+import PropTypes from "prop-types";
 
 
 function AllFilms({setPage, films, page, isFetching, active, handleActiveClick, handleDeactiveClick}) {
@@ -64,12 +65,19 @@ function AllFilms({setPage, films, page, isFetching, active, handleActiveClick, 
                 </div>
                 <div className={cl.coming__soon}></div>
             </div>
-
-
         </>
-
-
     );
+}
+
+AllFilms.propTypes = {
+    setPage: PropTypes.func,
+    isFetching:  PropTypes.func,
+    films: [],
+    page: PropTypes.number,
+    active: PropTypes.bool,
+    handleActiveClick:  PropTypes.func,
+
+
 }
 
 export default AllFilms;

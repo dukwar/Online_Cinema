@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 
 const SidebarLink = styled(Link)`
+  position: relative;
   display: flex;
   color: #e1e9fc;
   justify-content: space-between;
@@ -11,11 +12,33 @@ const SidebarLink = styled(Link)`
   padding: 20px;
   height: 60px;
   font-size: 18px;
+
+  &:before {
+    content: '';
+    width: 5px;
+    height: 0px;
+    background-color: #ff7c00;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 1;
+    transition: all .2s ease;
+  }
   
   &:hover {
+    &:before {
+      content: '';
+      width: 5px;
+      height: 100%;
+      background-color: #ff7c00;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      z-index: 1;
+      
+    }
     color: white;
     background: #252831;
-    border-left: 4px solid #ff7c00;
     cursor: pointer;
     list-style: none;
     text-decoration: none;
@@ -25,7 +48,8 @@ const SidebarLink = styled(Link)`
 `
 
 const SidebarLabel = styled.span`
-    margin-left: 16px;
+  font-weight: 600;
+  margin-left: 16px;
   
   
     
@@ -34,15 +58,16 @@ const SidebarLabel = styled.span`
 const DropdownLink = styled(Link)`
   background: #414757;
   height: 60px;
-  padding-left: 3rem;
+  padding-left: 2rem;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #f5f5f5;
   font-size: 18px;
+  transition: all .2s ease;
   
   &:hover {
-    background: #632ce4;
+    background:  #ff7c00;
     cursor: pointer;
     list-style: none;
     text-decoration: none;

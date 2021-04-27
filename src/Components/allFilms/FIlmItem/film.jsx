@@ -4,10 +4,14 @@ import Navbar__Item from "../../Navbar/Navbar__Item";
 import PropTypes from 'prop-types';
 
 
-function Film({title, description, actors, age, countries, directors, duration, genres, poster, premiereRussia, premiereWorld, trailer, ratingKinopoisk}) {
+function Film({title, description, actors, age, countries, directors, genres, poster, premiereRussia, premiereWorld, trailer, ratingKinopoisk}) {
 
 
-    const ageF = age ? age.split('').filter(num => !isNaN(num)).join('') : 13
+    const ageF = age ? age.split('').filter(num => !isNaN(num)).join('') : 12
+    const countriesF =  countries && countries.join(', ')
+    const actorsF = actors && actors.join(', ')
+    const directorsF = directors && directors.join(', ')
+    const genresF = genres && genres.join(', ')
 
 
     return (
@@ -26,7 +30,7 @@ function Film({title, description, actors, age, countries, directors, duration, 
                                 </div>
                                 <div className={cl.film__content__inner}>
                                     <div>
-                                        <p>{countries && countries.map(country => country).join(', ')}</p>
+                                        <p>{countriesF}</p>
                                         <div className={cl.rating}>{ratingKinopoisk}</div>
 
 
@@ -44,9 +48,9 @@ function Film({title, description, actors, age, countries, directors, duration, 
                                             </div>
                                             <div className={cl.second__decrp__col}>
                                                 <p>2 ч. 16 мин.</p>
-                                                <p>{genres && genres.map(genre => genre).join(', ')}</p>
-                                                <p>{directors && directors.map(dir => dir).join(', ')}</p>
-                                                <p>{actors && actors.map(actor => actor).join(', ')}</p>
+                                                <p>{genresF}</p>
+                                                <p>{directorsF}</p>
+                                                <p>{actorsF}</p>
                                             </div>
                                         </div>
 
@@ -89,7 +93,6 @@ function Film({title, description, actors, age, countries, directors, duration, 
     );
 }
 
-// title, description, actors, age, countries, directors, duration, genres, poster, premiereRussia, premiereWorld, trailer, ratingKinopoisk
 
 Film.propTypes = {
     title: PropTypes.string,
@@ -120,14 +123,6 @@ Film.defaultProps = {
     premiereWorld: '15 апр. 2021 г.',
     trailer: 'https://www.youtube.com/embed/sJjsCcDFKr0',
     ratingKinopoisk: '5.8'
-
-
-
-
-
-
-
-
 }
 
 export default Film;

@@ -3,6 +3,8 @@ import Recent from "./Recent";
 import {connect} from "react-redux";
 import axios from "axios";
 import {addFilmsAC, isFetchingAC, setFilter} from "../../Redux/ActionCreators";
+import Sidebar from "../../helpersSCSS/SideBar/sidebar";
+import Footer from "../Footer/footer";
 
 
 const RecentContainerMemo = React.memo(
@@ -25,15 +27,15 @@ const RecentContainerMemo = React.memo(
 
 
         useEffect(() => {
-            props.isFetchingAC(true)
+            // props.isFetchingAC(true)
             // axios.get(`${baseUrl}/${filter}/all/page/${page}/token/5d1a70fffb0fa08c373285cd69378048`)
             //     .then(response => response.data)
             //     .then(response => props.addFilmsAC(response[filter]))
             //     .catch((response) => console.log(response[message]))
 
-            setTimeout(() => {
-                props.isFetchingAC(false)
-            }, 1000)
+            // setTimeout(() => {
+            //     props.isFetchingAC(false)
+            // }, 1000)
 
 
         },[])
@@ -48,11 +50,13 @@ const RecentContainerMemo = React.memo(
 
         return (
             <Fragment>
+                <Sidebar />
                 <Recent films={props.films}
                         isFetching={props.isFetching}
                         handleSetFilter={handleSetFilter}
 
                 />
+                <Footer />
             </Fragment>
         );
     }

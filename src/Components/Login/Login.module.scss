@@ -1,0 +1,105 @@
+@import "../../helpersSCSS/vars";
+
+.login {
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://wallbox.ru/wallpapers/main2/201732/1502385374598c94ded70e35.82085678.jpg");
+
+  padding-bottom: 1rem;
+
+
+  .login__wrapper {
+    background-color: white;
+    border-radius: 16px;
+    transition: all .2s ease-in;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .1);
+    width: 360px;
+
+    .login__panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0 40px 0;
+
+
+      .login__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .logo__wrapper {
+          margin-top: 2rem;
+          width: 64px;
+          height: 64px;
+
+          background-image: url("https://yastatic.net/s3/passport-static/core/v0.2.197-8/i/services_icons/customization/plus-kinopoisk.png");
+          background-position: center;
+          background-size: cover;
+          //background: url("https://yastatic.net/s3/passport-static/core/v0.2.197-8/i/services_icons/customization/plus-kinopoisk.png") no-repeat / cover center;
+
+
+        }
+
+        .logo__text {
+          margin-bottom: 2rem;
+          margin-top: 1rem;
+          text-align: center;
+          font-weight: 600;
+          font-size: 20px;
+
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  height: 100%;
+  padding: 0 3rem 0 3rem;
+  justify-self: flex-end;
+
+  color: #FFFFFF;
+  width: 100%;
+
+  p:nth-child(2) {
+    justify-self: flex-end;
+  }
+
+}
+
+
+.login__button {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin-top: 1rem;
+  position: relative;
+  font-weight: 600;
+  background-color: rgba($secondaryColor, .9);;
+  border-radius: 10px;
+  padding: 10px 20%;
+  transition: all .3s ease;
+  color: black;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+    background-color: rgba($secondaryColor, 1);
+  }
+}

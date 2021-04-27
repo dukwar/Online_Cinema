@@ -7,6 +7,8 @@ import classNames from "classnames";
 import Button from "../Components/Button/button";
 import "./Slider.scss"
 import Intro from "../Components/Intro/Intro";
+import { Transition } from 'react-transition-group';
+
 
 
 
@@ -29,22 +31,39 @@ let Slider = ({
             <Carousel >
 
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={Photo1}
-                        alt="First slide"
-                    />
+                    <Transition
+                        in={true}
+                        timeout={500}
+                        mountOnEnter
+                        unmountOnExit
+                    >
+                        {state =>  <img
+                            className={`img__now ${state}  d-block w-100`}
+                            src={Photo1}
+                            alt="First slide"
+                        />}
+
+                    </Transition>
+
                     <Carousel.Caption className="caption">
 
                     </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item >
-                    <img
-                        className="d-block w-100"
-                        src={Photo2}
-                        alt="Second slide"
-                    />
+                    <Transition
+                        in={true}
+                        timeout={500}
+                        mountOnEnter
+                        unmountOnExit
+                    >
+                        {state =>  <img
+                            className={`img__now ${state}  d-block w-100`}
+                            src={Photo2}
+                            alt="First slide"
+                        />}
+
+                    </Transition>
                     <Carousel.Caption>
                     </Carousel.Caption>
 
@@ -52,11 +71,19 @@ let Slider = ({
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100 "
-                        src={Photo3}
-                        alt="Third slide"
-                    />
+                    <Transition
+                        in={true}
+                        timeout={500}
+                        mountOnEnter
+                        unmountOnExit
+                    >
+                        {state =>  <img
+                            className={`img__now ${state}  d-block w-100`}
+                            src={Photo3}
+                            alt="First slide"
+                        />}
+
+                    </Transition>
                     <Carousel.Caption>
                     </Carousel.Caption>
                 </Carousel.Item>

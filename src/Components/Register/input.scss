@@ -8,7 +8,7 @@
   &:before {
     content: '';
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: orange;
     position: absolute;
     bottom: -1px;
@@ -67,7 +67,7 @@
   }
 }
 
-.staticLabel {
+.staticLabelInput {
   transform: translateY(-20px);
   font-size: 13px;
 }

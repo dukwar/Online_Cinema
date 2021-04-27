@@ -3,10 +3,13 @@ import AllFilms from "./allFilms";
 import {connect} from "react-redux";
 import {addFilmsAC, isFetchingAC, setFilter} from "../../Redux/ActionCreators";
 import axios from "axios";
-import Preloader from "../../helpersSCSS/Preloader/Preloader";
+import Sidebar from "../../helpersSCSS/SideBar/sidebar";
+import Footer from "../Footer/footer";
+import PropTypes from "prop-types";
 
 
-function AllFilmsContainer(props) {
+
+function AllFilmsContainer({films, isFetching, filter, addFilmsAC, isFetchingAC, setFilter}) {
 
     // set params for request
     let [page, setPage] = useState(1)
@@ -17,7 +20,7 @@ function AllFilmsContainer(props) {
     })
 
     const {baseUrl, message} = queryParams
-    const {filter} = props
+
 
     // set params for active arrow pagination
     const [active, setActive] = useState(true)
@@ -31,14 +34,14 @@ function AllFilmsContainer(props) {
 
     // request
     useEffect(() => {
-        props.isFetchingAC(true)
+        isFetchingAC(true)
         axios.get(`${baseUrl}/${filter}/all/page/${page}/token/5d1a70fffb0fa08c373285cd69378048`)
             .then(response => response.data)
-            .then(response => props.addFilmsAC(response[filter]))
+            .then(response => addFilmsAC(response[filter]))
             .catch((response) => console.log(response[message]))
 
         setTimeout(() => {
-            props.isFetchingAC(false)
+            isFetchingAC(false)
         }, 1000)
 
 
@@ -71,19 +74,27 @@ function AllFilmsContainer(props) {
 
     return (
         <>
-            <AllFilms films={props.films}
-                      isFetching={props.isFetching}
+            <Sidebar />
+            <AllFilms films={films}
+                      isFetching={isFetching}
                       setPage={handleSetPage}
                       page={page}
                       active={active}
                       handleActiveClick={handleActiveClick}
                       handleDeactiveClick={handleDeactiveClick}
             />
+            <Footer />
 
         </>
 
 
     );
+}
+
+AllFilmsContainer.propTypes = {
+    films: [],
+    isFetching: PropTypes.bool,
+    filter: PropTypes.string
 }
 
 const MapStateToProps = (state) => {

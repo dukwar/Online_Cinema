@@ -6,6 +6,9 @@ import {withRouter} from "react-router";
 import {isFetchingAC, addFilmAC} from "../../../Redux/ActionCreators";
 import axios from "axios";
 import Preloader from "../../../helpersSCSS/Preloader/Preloader";
+import Sidebar from "../../../helpersSCSS/SideBar/sidebar";
+import Footer from "../../Footer/footer";
+import PropTypes from "prop-types";
 
 
 function FilmContainer({film, match, filter, isFetching, isFetchingAC, addFilmAC}) {
@@ -47,6 +50,7 @@ function FilmContainer({film, match, filter, isFetching, isFetchingAC, addFilmAC
 
     return (
         <>
+            <Sidebar/>
             <Film title={film.title}
                   description={film.description}
                   trailer={film.trailer}
@@ -63,13 +67,21 @@ function FilmContainer({film, match, filter, isFetching, isFetchingAC, addFilmAC
                   ratingKinopoisk={film.rating_kinopoisk}
 
             />
-
-
-
+            <Footer/>
 
 
         </>
     );
+}
+
+FilmContainer.propTypes = {
+    film: {},
+    match: {},
+    filter: PropTypes.string,
+    isFetching: PropTypes.bool,
+    isFetchingAC:  PropTypes.func,
+    addFilmAC:  PropTypes.func
+
 }
 
 const MapStateToProps = (state) => {
@@ -90,6 +102,5 @@ export default compose(
 
         }),
     withRouter,
-
 )(FilmContainer)
 

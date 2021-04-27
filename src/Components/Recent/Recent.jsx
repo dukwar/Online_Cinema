@@ -28,13 +28,10 @@ console.log('Recent')
                 <div className={'nav__recent'}>
                     <NavbarGroup>
                         <Navbar__Item onClick={props.handleSetFilter} filter={'movies'} navBetween>
-                            Movies
+                            Кино
                         </Navbar__Item>
                         <Navbar__Item onClick={props.handleSetFilter} filter={'tv-series'} navBetween>
-                            Tv-Series
-                        </Navbar__Item>
-                        <Navbar__Item navBetween>
-                            Top Rating
+                            Сериалы
                         </Navbar__Item>
                     </NavbarGroup>
                 </div>

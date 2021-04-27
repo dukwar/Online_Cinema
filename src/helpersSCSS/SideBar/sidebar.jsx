@@ -1,5 +1,4 @@
 import React, {Fragment, useState} from "react";
-import "./sidebar.scss"
 import styled from "styled-components"
 import {Link} from "react-router-dom";
 import * as FaIcons from "react-icons/fa"
@@ -36,7 +35,7 @@ const SidebarNav = styled.nav`
   top: 0;
   left: ${({sidebar}) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
-  z-index: 10;
+  z-index: 100;
 `
 
 const SidebarWrap = styled.div`

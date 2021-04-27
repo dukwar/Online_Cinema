@@ -1,0 +1,62 @@
+@import "../../helpersSCSS/vars";
+
+
+.login__input {
+  position: relative;
+  height: 100%;
+  padding: 10px 0;
+  margin-top: 1rem;
+  width: 75%;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+
+
+  input {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px 0 12px;
+    font-size: 100%;
+    vertical-align: top;
+    border: 0 solid transparent;
+    outline: 0;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .reg__label {
+    padding-left: 12px;
+
+    position: absolute;
+    top: 25%;
+    left: 0;
+    color: rgba(0, 0, 0, .4);
+    transition: all .2s ease;
+  }
+
+}
+
+.login__input.active {
+  & {
+    border: 2px solid orange;
+  }
+
+  .reg__label {
+    transform: translateY(-12px);
+    font-size: 14px;
+  }
+}
+
+.staticLabel {
+  transform: translateY(-12px);
+  font-size: 14px;
+}
+
+.login__input.isValid {
+  & {
+    border: 2px solid red;
+  }
+}
+
